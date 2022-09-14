@@ -1,0 +1,57 @@
+created: 20220201231642858
+modified: 20220823200234483
+tags: [[Features and Issues]]
+title: Feature Requests
+type: text/vnd.tiddlywiki
+
+!! From Lewis Proposal:
+
+* Show number of years of experience and credentials of an employee in the Resume Tiddler
+** Try to not alter the copy-paste section, leave the years of experience smw else
+*Better repository of all our graphical/dashboard feature service formats
+** we have some scattered everywhere (i.e. our various LRT dashboard formats we don't have anonymized versions ready to go, and they don't change that often I dont think)
+* One liner version of personal experience
+** Should already work but was requested so check if working correctly
+** Any other way to shorten resumes
+* Way to fully exclude a project from resume, including past experience list
+** Like a "hide" button in the table to properly hide a project from being on the resume
+* Proposal examples in the wiz
+** notes about what was good and bad
+** lessons learned
+* Update blank column to show which description is blank instead of just that SOME description is blank
+* Save all open resumes to Lewis
+* Refresh without going back to home page (i.e previous workspace type feature. Refresh should update wiki but not return to home page)
+* Show Lessons Learned on project tiddlers
+
+! ''OLD BELOW''
+
+* Fix issue with personal experience -- if you select "Normal" the experience disappears  `Issue was only in Dave's resume, fixed now`
+* Fix priority with personal experience, can't make them sort to the bottom `Issue was only in Dave's resume, fixed now`
+* Add a Number of Employees field to the Projects -- count number of links `Seems impossible to automatically count number of links and place value in a field (This is likely by design). For now, count only shows in project tiddler text and master project table`
+* Add a "Major Projects" TOC entry, filter via number of employees `Done.`
+
+''Note from Sehbazz:'' In general, it seems impossible to continuously find all records with a certain property and alter their fields/tags. We can do it once by clicking a button (eg. click a button that finds all tiddlers tagged "delete" and delete them) but it cannot be done continuously (eg. have a script that deletes any tiddler as soon as it is tagged "delete"). This is why the third feature is impossible (or atleast incredibly challenging, I have not found any workaround)
+
+Old
+
+* Some ways to highlight issues with the data
+* Entrytype for services w/ description sizes
+* Move title field up in the bio creator. Maybe consider also showing the title in the text demo field? More things to make it look important `Moved to top an added "Required" placeholder`
+* Adding a Project -- maybe a flow chart? 
+* In Create New Experience, would be good to show the text for the project above the experience text. `Done`
+* Make the Q&A presentation an FAQ and put it as part of the Overview
+* ~~Make it obvious that you need to put a name in for create new SMA Project~~
+* Some kind of thing for generating a new project and doing descriptions for a project -- show and hide text boxes? Move the button before the text box `Whole new SMA project creator format, should fix issues`
+
+Complete:
+
+*~~ A list of all people who are linked to a project in the [[Master Project Table]] [Done, expand project to see list of linked employees at the bottom] //is there any way to get the list of employees into the table?//`Yes, check now?`~~
+* ~~A button in the [[Master Project Table]] for each project that takes you to a blank "Experience" tiddler, maybe with some pre-filling [Button added to each project that goes to "create new experience", expand project entry in master project table to use button] //awesome // ~~
+* ~~Streamline/merge the Project description editing boxes so they are in the Text of the projects and all descriptions are in fields [Done.]~~
+* ~~A nice way to add new projects  [Done. See "Create New SMAproject"]~~
+* An easy way to see if projects do not have a description (both in the table and in the resume builders) -- an icon or a B [Done. columns added to master project table, Expand entries in resume builders to see] //swap the function -- icon appears if there is text// `Done, icon is now a checkmark`
+* Sorting via priority is inconsistent `Fixed`
+* ~~A "Comments" or "Issues" collection tiddler/form. [Check "Comments and Issues" Tiddler]~~
+*~~ Persistent selection for projects and bios [Done. Selection in Master table is now reflected in resumes, and vice-versa]~~
+* ~~More than 4 priorities [There are now 8 priorities, default value is 8, with the lowest priority being 8 and the highest being 1]~~
+*~~ Short resume project descriptions field so we can make two-pager resumes easily, ability to toggle which one to use [Done. Use "One Liner Description" to modify short description.]~~

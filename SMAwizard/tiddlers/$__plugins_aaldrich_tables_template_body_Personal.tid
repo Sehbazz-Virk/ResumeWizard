@@ -1,0 +1,15 @@
+created: 20220208163737213
+modified: 20220209184501919
+tags: $:/tags/table/BodyTemplate
+tbl-column-list: Personal
+tbl-noedit: Personal
+title: $:/plugins/aaldrich/tables/template/body/Personal
+type: text/vnd.tiddlywiki
+
+<td style="width:1.4ch;text-align:center;">
+  <$tiddler tiddler = <<currentRecord>> >
+    <$list filter="[all[current]field:ProjectTitleLink[Personal]]">
+      {{TableCheckmark_SVG}}
+    </$list>
+  </$tiddler>
+</td>

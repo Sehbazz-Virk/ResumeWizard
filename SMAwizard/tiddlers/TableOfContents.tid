@@ -1,0 +1,17 @@
+caption: Contents
+created: 20220127194341196
+list-after: $:/core/ui/SideBar/open
+modified: 20220512205018579
+tags: $:/tags/SideBar exported
+title: TableOfContents
+type: text/vnd.tiddlywiki
+
+<div class="tc-table-of-contents">
+
+<<toc-selective-expandable 'TableOfContents' "sort[title]">>
+
+<hr>
+
+{{$:/MajorProjectsSource}}
+
+</div>

@@ -1,0 +1,18 @@
+created: 20220201204520083
+modified: 20220201213758031
+tags: 
+title: Redefine Project Links
+type: text/vnd.tiddlywiki
+
+\define redefine(projectTitle)
+<$action-setfield $tiddler="$projectTitle$" text = "{{$projectTitle$ - Edit!!ResumeDescription}}" 
+shortdescription = "{{$projectTitle$ - Edit!!ShortDescription}}"
+longdescription = "{{$projectTitle$ - Edit!!LongDescription}}" />
+\end
+
+<$button>
+redefine
+<$list filter=tag[Entry]field:EntryType[SMAproject]]>
+<$macrocall $name="redefine" projectTitle=<<currentTiddler>>/>
+</$list>
+</$button>

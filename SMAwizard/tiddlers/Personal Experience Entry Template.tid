@@ -1,0 +1,23 @@
+EntryType: Experience
+Keywords: urban growth, organizing, draft report, infographics, financial viability analysis
+Name: Agnieszka Dobrski
+ProjectName: Bremner Financial Viability Analysis
+ProjectTitleLink: Bremner Financial Viability Analysis
+Services: C
+created: 20220214215214064
+included: 0
+modified: 20220323165637839
+normaldescription: Agnieszka worked on organizing and helping to write a draft report summarizing the findings, along with creating and updating the infographics for the report.
+one_liner_description: 
+showonresume: <$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}
+tags: Code
+title: Personal Experience Entry Template
+type: text/vnd.tiddlywiki
+
+//Personal Project//
+
+<h3> <b> Edit Normal Description </b></h3>
+<$edit-text field="normaldescription" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+<h3> <b> Edit One Liner Description </b></h3>
+<$edit-text field="one_liner_description" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>

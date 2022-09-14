@@ -1,0 +1,194 @@
+ActualEndDate: 
+Awards: 
+Challenges: 
+Client: 
+ConsultingBudget: 
+ConsultingCost: 
+Contact: 
+CostScheduleDeviations: 
+Date: 
+Discipline: 
+LessonsLearned: 
+Location: 
+Long Description: 
+LongDescription: 
+OneLinerDescription: 
+OriginalEndDate: 
+OtherNotes: 
+Partner: 
+ProjectBudget: 
+ProjectKeywords: 
+ProjectName: Edmonton Catholic Schools Divine Mercy Elementary School
+ProjectServices: 
+ResumeDescription: Divine Mercy Catholic Elementary School is a new school in southeast Edmonton. It was halfway through construction and behind schedule in January 2020 when Edmonton Catholic Schools began to be concerned about meeting their September 1, 2020 opening date. SMA assessed the problem, helped the project get back on track, and monitored progress to provide ECSD with confidence in the end date. The plan began with a site visit and interviews with the project team, followed by a detailed risk analysis and forensic schedule review. SMA worked closely with the contractor to refine the schedule to current standards and introduced key mitigation measures such as materials delivery tracking to the team. Two months into the project, the COVID-19 pandemic began to introduce additional serious challenges to the work. SMA was instrumental in helping the team maintain momentum and work productively together to continue to mitigate risk. Even given the manufacturing disruptions and shipping delays, the school was ultimately successfully completed in September 2020.
+Short Description: 
+ShortDescription: 
+StartDate: 
+created: 20220207230054108
+modified: 20220811162402982
+one_liner_description: 
+tags: [[Create New]]
+title: Create New SMAproject
+trophy: 
+type: text/vnd.tiddlywiki
+
+\define GenerateProject(ProjName)
+<$action-createtiddler $basetitle="$ProjName$" 
+text="""{{||SMAproject Template}}""" 
+ActualEndDate = {{!!ActualEndDate}}
+Awards = {{!!Awards}}
+Challenges = {{!!Challenges}}
+Client = {{!!Client}}
+ConsultingBudget = {{!!ConsultingBudget}}
+ConsultingCost = {{!!ConsultingCost}}
+Contact = {{!!Contact}}
+CostScheduleDeviations = {{!!CostScheduleDeviations}}
+Date = {{!!Date}}
+Discipline = {{!!Discipline}}
+LessonsLearned = {{!!LessonsLearned}}
+Location = {{!!Location}}
+OriginalEndDate = {{!!OriginalEndDate}}
+OtherNotes = {{!!OtherNotes}}
+Partner = {{!!Partner}}
+ProjectBudget = {{!!ProjectBudget}}
+ProjectKeywords = {{!!ProjectKeywords}}
+ProjectServices = {{!!ProjectServices}}
+StartDate = {{!!StartDate}}
+trophy = {{!!trophy}}
+EntryType = "SMAproject"
+tags = "Entry"
+longdescription={{!!LongDescription}}
+one_liner_description={{!!one_liner_description}}
+shortdescription={{!!ShortDescription}}
+ResumeDescription={{!!ResumeDescription}}
+>
+<$action-navigate $to=<<createTiddler-title>>/>
+</$action-createtiddler>
+\end
+
+\define checkProjectExists(ProjName)
+<$list filter = "[all[current]!field:ProjectName[]]">
+<$list filter="[tag[Entry]field:EntryType[SMAproject]field:title[$ProjName$]]">
+<mark> This project, [[$ProjName$]], already exists! Please make changes in the existing entry. </mark>
+</$list>
+</$list>
+\end
+
+\define clear()
+<$action-setfield
+ActualEndDate=""
+Awards=""
+Challenges=""
+Client=""
+ConsultingBudget=""
+ConsultingCost=""
+Contact=""
+CostScheduleDeviations="" 
+Date=""
+Discipline=""
+LessonsLearned=""
+Location=""
+OriginalEndDate=""
+OtherNotes=""
+Partner=""
+ProjectBudget=""
+ProjectKeywords=""
+ProjectName=""
+ProjectServices=""
+ResumeDescription=""
+StartDate=""
+trophy=""
+/>
+\end
+
+<$button>
+Generate Project
+<$macrocall $name="GenerateProject" ProjName={{!!ProjectName}} />
+</$button>
+<$button>
+Clear Form
+<<clear>>
+</$button>
+
+<$macrocall $name="checkProjectExists" ProjName = {{!!ProjectName}} />
+
+<h3> ''Required'' </h3>
+
+|Project Name|<$edit-text field="ProjectName" class="text-bar"/>|
+|Awards - Copy This:🏆|<$edit-text field="trophy" class="text-bar"/>|
+
+<h3>Resume Description:</h3>
+<$edit-text field="ResumeDescription" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+<h3>
+<$button set="reveal_extra_descriptions" setTo="show" class="tc-btn-invisible tc-tiddlylink">
+''Add Extra Descriptions''
+</$button>
+</h3>
+
+<$reveal type="match" state="reveal_extra_descriptions" text="show">
+
+<$button set="reveal_extra_descriptions" setTo="hide" class="tc-btn-invisible tc-tiddlylink">
+Hide
+</$button>
+
+Long Description: <br>
+<$edit-text field="LongDescription" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+One-Liner Description: <br>
+<$edit-text field="OneLinerDescription" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+Short Description: <br>
+<$edit-text field="ShortDescription" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+</$reveal>
+
+<h3>
+<$button set="reveal_extra_details" setTo="show" class="tc-btn-invisible tc-tiddlylink">
+''Add Extra Details''
+</$button>
+</h3>
+<$reveal type="match" state="reveal_extra_details" text="show">
+
+<$button set="reveal_extra_details" setTo="hide" class="tc-btn-invisible tc-tiddlylink">
+Hide
+</$button>
+
+|table-style|k
+|Actual End Date|<$edit-text field="ActualEndDate" class="text-bar"/>|
+|Awards|<$edit-text field="Awards" class="text-bar"/>|
+|Client|<$edit-text field="Client" class="text-bar"/>|
+|Consulting Budget|<$edit-text field="ConsultingBudget" class="text-bar"/>|
+|Consulting Cost|<$edit-text field="ConsultingCost" class="text-bar"/>|
+|Contact|<$edit-text field="Contact" class="text-bar"/>|
+|Date|<$edit-text field="Date" class="text-bar"/>|
+|Discipline|<$edit-text field="Discipline" class="text-bar"/>|
+|Location|<$edit-text field="Location" class="text-bar"/>|
+|Original End Date|<$edit-text field="OriginalEndDate" class="text-bar"/>|
+|Partner|<$edit-text field="Partner" class="text-bar"/>|
+|Project Budget|<$edit-text field="ProjectBudget" class="text-bar"/>|
+|Project Keywords| <$edit-text field="ProjectKeywords" class="text-bar"/>|
+|Project Services|<$edit-text field="ProjectServices" class="text-bar"/>|
+|Start Date| <$edit-text field="StartDate" class="text-bar"/>|
+
+Challenges: <br>
+<$edit-text field="Challenges" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+Cost Schedule Deviations: <br>
+<$edit-text field="CostScheduleDeviations" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+Lessons Learned: <br>
+<$edit-text field="LessonsLearned" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+General Notes: <br>
+<$edit-text field="OtherNotes" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+</$reveal>
+
+<$button>
+Generate Project
+<$macrocall $name="GenerateProject" ProjName={{!!ProjectName}} />
+</$button>
+<$button>
+Clear Form
+<<clear>>
+</$button>

@@ -1,0 +1,56 @@
+Description: Agnieszka worked on organizing and helping to write a draft report summarizing the findings, along with creating and updating the infographics for the report.
+EntryType: Experience
+Keywords: urban growth, organizing, draft report, infographics, financial viability analysis
+Name: Agnieszka Dobrski
+ProjectName: Bremner Financial Viability Analysis
+ProjectTitleLink: Bremner Financial Viability Analysis
+Services: C
+created: 20220214215118693
+included: 0
+modified: 20220224171130194
+showonresume: <$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}
+tags: Code
+title: SMA Experience Entry Template
+type: text/vnd.tiddlywiki
+
+<h3> <b> Resume Display Text </b></h3>
+<h3> Full Length: </h3>
+<$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> ''{{!!Description}}''
+
+<h3> One Liner: </h3>
+<$transclude tiddler = {{!!ProjectTitleLink}} field="one_liner_description" /> ''{{!!Description}}''
+
+<$button>
+Click To Edit SMA Project Master Description
+<$action-navigate $to={{!!ProjectTitleLink}}/>
+</$button>
+
+<h3> <b> Edit Personal Experience </b></h3>
+
+<$edit-text field="Description" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+<$tiddler tiddler={{!!ProjectTitleLink}}>
+<h3> ''Missing Project Descriptions'' </h3>
+<table>
+<tr>
+    <th>Description Type</th>
+    <th>Exists</th>
+  </tr>
+  <tr>
+    <td>Short</td>
+    <td><$list filter="[all[current]!field:Short Description[]]">{{TableCheckmark_SVG}}</$list></td>
+  </tr>
+  <tr>
+    <td>Long</td>
+    <td><$list filter="[all[current]!field:Long Description[]]">{{TableCheckmark_SVG}}</$list></td>
+  </tr>
+  <tr>
+   <td>Resume</td>
+   <td><$list filter="[all[current]!field:ResumeDescription[]]">{{TableCheckmark_SVG}}</$list></td>
+  </tr>
+   <tr>
+   <td>1-Liner</td>
+   <td><$list filter="[all[current]!field:one_liner_description[]]">{{TableCheckmark_SVG}}</$list></td>
+  </tr>
+</table>
+</$tiddler>

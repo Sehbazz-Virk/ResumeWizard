@@ -1,0 +1,39 @@
+created: 20220224203825397
+modified: 20220228221001966
+tags: Docs
+title: SMAproject Description
+type: text/vnd.tiddlywiki
+
+!!! __SMA Projects__
+
+SMAproject Entries are descriptions of projects undertaken by SMA. Their main page shows 4 types of Descriptions:
+
+#Long: Highly detailed descriptions of the project
+#Short: More concise descriptions which are easier to include in Proposals and other documentation
+#Resume: Employee resumes contain descriptions of projects the employee worked on. Resume Descriptions are how the project should be described on Resumes.
+#One-Liner: Incredibly short descriptions meant to be included in 2-pager Resumes.
+
+The main page also shows a list of Employees who have worked on the project. This list works by finding all the experiences that are linked to this project and inserting the names of those Employees. 
+
+There are various pieces of metadata for each Project entry, all of them are listed here:
+
+| ActualEndDate | Awards | Challenges |
+| Client | ConsultingBudget | ConsultingCost |
+| Contact | CostScheduleDeviations | Date |
+| Discipline | EntryType | LessonsLearned |
+| Location | Long Description | OriginalEndDate |
+| OtherNotes | Partner | ProjectBudget |
+| ProjectKeywords | ProjectServices | |
+| StartDate | trophy ||
+
+The final element on SMA project entries is a button that lets users easily create a new Experience entry linked to this project. The button opens the [[Create New Experience]] tiddler with the "Project Name" Prefilled to the project it was clicked from.
+
+__Related__: 
+
+SMA project tiddlers use the [[SMAproject Template]] to display their data. See the [[SMAproject Template Description]] for more details about the template and for resources about how templating works in general.
+
+The [[Create New SMAproject|Create New SMAproject Description]] tiddler is used to create new descriptions of projects.
+
+__Links__:
+
+SMA Experience tiddlers transclude the descriptions of projects from project tiddlers to create descriptions of experiences. See [[SMA Experience Description]] for more details.

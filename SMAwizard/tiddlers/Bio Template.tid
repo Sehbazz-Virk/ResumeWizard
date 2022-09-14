@@ -1,0 +1,7 @@
+created: 20220202234715102
+modified: 20220310170057137
+tags: Code Template
+title: Bio Template
+type: text/vnd.tiddlywiki
+
+<$edit-text field="Description" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>

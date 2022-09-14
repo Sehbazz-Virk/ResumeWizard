@@ -1,0 +1,23 @@
+created: 20220201185809933
+modified: 20220201203842999
+tags: 
+title: Project Editor Populator
+type: text/vnd.tiddlywiki
+
+\define createEditor(projectTitle)
+<$action-createtiddler $basetitle = "$projectTitle$ - Edit" $template = "Editor Template" $overwrite = "yes" tags = "Editor"
+ResumeDescription = {{$projectTitle$}} 
+ShortDescription = {{$projectTitle$!!Short Description}}
+LongDescription = {{$projectTitle$!!Long Description}}
+projectName = "$projectTitle$"
+/>
+\end
+
+
+Press the button below to create all the project editors
+<$button>
+click me
+<$list filter = "tag[Entry]field:EntryType[SMAproject]]">
+<$macrocall $name = "createEditor" projectTitle=<<currentTiddler>>/>
+</$list>
+</$button>

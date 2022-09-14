@@ -1,0 +1,14 @@
+created: 20170206022244360
+modified: 20220201165717000
+tags: $:/tags/table/BodyTemplate
+tbl-column-list: tbl-button edit
+tbl-noedit: tbl-button
+title: $:/plugins/aaldrich/tables/template/body/button
+type: text/vnd.tiddlywiki
+
+<td style="width:1.4ch;text-align:center;">
+  <$button class="tc-btn-invisible" tooltip={{!!tbl-button-tip}} style="min-width:1.4ch">
+    <<buttonIcon>>
+    <<buttonAction>>
+  </$button>
+</td>

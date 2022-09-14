@@ -1,0 +1,59 @@
+created: 20220412215332541
+modified: 20220628191950010
+tags: Docs
+title: Frequently Asked Questions
+type: text/vnd.tiddlywiki
+
+''How do I bring a resume into Indesign?''
+
+Create an Employee's resume in [[their Resume builder|All SMA Resumes]], then copy the resume section and paste it into the prepared Indesign template. 
+
+''What is an Entry?''
+
+An Entry is a record that contains a description of some topic. For example, the Entry called [[Green Line LRT]] describes the Green Line LRT and SMA's role on the project. The Wizard uses these entries to build resumes.
+
+''What is an SMA project Entry?''
+
+SMA project entries describe projects that SMA worked on. They will contain various descriptions of the project, each used for a different purpose, and a list of the employees who worked that project.
+
+''What is a Linked Experience?''
+
+Linked experiences describe what an employee did on an __SMA project__ (They are //linked// to that project). These experience entries can then be selected in Resume Builders to create a resume.
+
+''What is a Personal Experience?''
+
+Personal experiences describe what an employee did on a non-SMA project. A good example is Agnieszka's Experience at [[Alldritt Tower|Agnieszka Dobrski - Experience - Alldritt Tower]], or Roy's Experience at the [[Qatar Pearl GTL|Roy Labban - Experience - Qatar Pearl GTL]]. Since these entries cannot pull a project description from an SMA project entry, the full project and experience description needs to be given in the Experience Entry.
+
+''How Do I Build a Bio?''
+
+Use the [[Create New Bio]] Tiddler. Fill in the required fields and any other information, then click "generate". The new Bio will automatically appear on the selected Employee's Resume Builder.
+
+''How Do I Add a new Experience (Personal or Linked)?''
+
+Use the [[Create New Experience]] Tiddler. Select the checkbox for Personal Experiences, and fill out the rest of the form. If there is an error, a highlighted warning will appear.
+
+''How Do I add a new SMA project?''
+
+Use the [[Create New SMAproject]] Tiddler. Only the fields under "Required" must be filled in, the others are optional but recommended. If the other fields are hidden, click the blue links (Extra Descriptions and Extra Details) to view them.
+
+''What happened to additional projects? How do I add them?''
+
+Additional projects are not a type of project anymore. In the Resume Builders, the names of all projects that an employee has taken part in will appear under "Additional Projects". Remove the projects you do not want after copying and pasting into Indesign. To add something similar to an Additional Project, create a personal experience without any description. Only the project name will appear on the Resume.
+
+Tip: Additional projects obey the priority assigned to them. To make it easy to remove projects that are not needed
+
+''How do I add new employees to the list of employees that worked on a project?''
+
+Those lists are populated by searching for every employee that has an experience linked to that project. So, to add an employee to that list, create an experience entry for that employee on that project.
+
+''How do I add images to service descriptions?''
+
+#Drag and drop the image into the Wizard. A green bar above saying "Drop Here" will appear. 
+#A Tiddler will appear prompting you to import the image. Click Import.
+#Go to the service description, whereever you would like the image to be included in the description add the following text : `[img[<IMAGE_NAME>]]`
+
+See [[Service Description - Risk Assessment - Workshops (EPCOR)]] for an example.
+
+''What do I do if I deleted something by mistake or if something might be broken?''
+
+This is not uncommon, but it is not a serious issue either. Since this Tiddlywiki is stored on a server, occasional errors can cause records to be lost while editing. We recommend saving progress very often. However, backups of the Wizard are created frequently and stored on the Google Drive. Contact Sehbazz on slack to replace any lost records (Or if you have any other questions). 

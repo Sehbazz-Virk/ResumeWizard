@@ -1,0 +1,15 @@
+created: 20220207172451760
+modified: 20220324160850508
+tags: $:/tags/table/BodyTemplate
+tbl-column-list: long
+tbl-noedit: long
+title: $:/plugins/aaldrich/tables/template/body/hasLong
+type: text/vnd.tiddlywiki
+
+<td style="width:1.4ch;text-align:center;">
+  <$tiddler tiddler = <<currentRecord>> >
+    <$list filter="[all[current]!field:Long Description[]]">
+      {{TableCheckmark_SVG}}
+    </$list>
+  </$tiddler>
+</td>

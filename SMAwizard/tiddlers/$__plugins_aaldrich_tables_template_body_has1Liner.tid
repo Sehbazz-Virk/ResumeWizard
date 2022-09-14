@@ -1,0 +1,15 @@
+created: 20220207172642103
+modified: 20220323221651394
+tags: $:/tags/table/BodyTemplate
+tbl-column-list: 1-Liner
+tbl-noedit: 1-Liner
+title: $:/plugins/aaldrich/tables/template/body/has1Liner
+type: text/vnd.tiddlywiki
+
+<td style="width:1.4ch;text-align:center;">
+  <$tiddler tiddler = <<currentRecord>> >
+    <$list filter="[all[current]!field:one_liner_description[]]">
+      {{TableCheckmark_SVG}}
+    </$list>
+  </$tiddler>
+</td>

@@ -1,0 +1,14 @@
+created: 20220208221332656
+modified: 20220506202131865
+tags: $:/tags/table/BodyTemplate
+tbl-column-list: Employees
+tbl-noedit: Employees
+title: $:/plugins/aaldrich/tables/template/body/Employees
+type: text/vnd.tiddlywiki
+
+<td style="width:1.4ch;">
+<$tiddler tiddler=<<currentRecord>> >
+  <small> <$count filter="[tag[Entry]field:EntryType[Experience]field:ProjectTitleLink<currentTiddler>]" />: <br> </small>
+  <$list filter="[tag[Entry]field:EntryType[Experience]field:ProjectTitleLink<currentTiddler>]" > <small> [{{!!Name}}]</small><br></$list>
+</$tiddler>
+</td>

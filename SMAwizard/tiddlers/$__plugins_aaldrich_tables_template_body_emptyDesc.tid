@@ -1,0 +1,22 @@
+created: 20220204231548333
+modified: 20220323220532872
+tags: $:/tags/table/BodyTemplate
+tbl-column-list: Blank
+tbl-noedit: Blank
+title: $:/plugins/aaldrich/tables/template/body/emptyDesc
+type: text/vnd.tiddlywiki
+
+<td style="width:1.4ch;text-align:center;">
+  <$tiddler tiddler = <<currentRecord>> >
+   <$list filter="[all[current]!field:ProjectTitleLink[Personal]]">
+    <$list filter="[all[current]field:Description[]]">
+      <b> B </b>
+    </$list>
+  </$list>
+  <$list filter="[all[current]field:ProjectTitleLink[Personal]]">
+    <$list filter="[all[current]field:normaldescription[]][all[current]field:one_liner_description[]]">
+      <b> B </b>
+    </$list>
+  </$list>
+ </$tiddler>
+</td>

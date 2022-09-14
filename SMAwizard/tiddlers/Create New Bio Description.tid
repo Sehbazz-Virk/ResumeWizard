@@ -1,0 +1,11 @@
+created: 20220322162928127
+modified: 20220322221049432
+tags: Docs
+title: Create New Bio Description
+type: text/vnd.tiddlywiki
+
+The "[[Create New Bio]]" Tiddler is used to add new Bio entries into the database. Simply fill out the form and click Generate to create a new Bio.
+
+There is also a button to clear all the data currently entered in the form. 
+
+For details about how this tiddler is implemented see [[Create New Bio Code]]

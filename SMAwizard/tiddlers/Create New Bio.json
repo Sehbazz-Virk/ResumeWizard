@@ -1,0 +1,22 @@
+[
+    {
+        "created": "20220203195606958",
+        "text": "\\define Generate(EmpName, BioTitle)\n<$action-createtiddler $basetitle=\"$EmpName$ - Bio - $BioTitle$\"\ntext=\"{{||Bio Template}}\"\nAccreditation = {{!!Accreditation}}\nAreasOfExpertise = {{!!AreasOfExpertise}}\nAssociations = {{!!Associations}}\nAwards = {{!!Awards}}\nEducation = {{!!Education}}\nJobTitle={{!!JobTitle}}\nKeywords={{!!Keywords}}\nStartYear={{!!StartYear}}\nDescription = {{!!Description}}\nNotes = {{!!Notes}}\nName = \"$EmpName$\"\nEntryType = \"Bio\"\nIncluded = \"0\"\ntags = \"Entry\"\n>\n<$action-navigate $to=<<createTiddler-title>>/>\n</$action-createtiddler>\n\\end\n\n\\define checkNameExists(Name)\n<$list filter = \"[all[current]!field:Name[]]\">\n<$list filter=\"[[Employees]getindex[$Name$]]\" emptyMessage=\"<mark>This employee ($Name$) doesn't exist. Make sure their name is spelled and capitalized correctly.</mark>\" >\n</$list>\n</$list>\n\\end\n\n\\define clear()\n<$action-setfield\nAccreditation=\"\"\nAreasOfExpertise=\"\"\nAssociations=\"\"\nAwards=\"\"\nBioTitle=\"\"\nDescription=\"\"\nEducation=\"\"\nJobTitle=\"\" \nKeywords=\"\"\nName=\"\"\nNotes=\"\"\nStartYear=\"\"\n/>\n\\end\n\n\\define checkHasTitle()\n<$list filter=\"[<currentTiddler>field:BioTitle[]]\">\n\n<mark> The New Bio Needs a Title! </mark>\n\n</$list>\n\\end\n\n\\define checkBioExists(name, title)\n<$list filter=\"[field:title[$name$ - Bio - $title$]]\">\n<mark>This Bio, [[$name$ - Bio - $title$]], Already exists!</mark>\n\n</$list>\n\\end\n\n\\define employeeSelection()\n<$select field=\"Name\">\n<$list filter=\"[[Employees]indexes[]]\">\n<option value=<<currentTiddler>>><$view field='title'/></option>\n</$list>\n</$select>\n\\end\n\n<h2> Enter the information for the new Bio </h2>\n\n<$macrocall $name=\"checkNameExists\" Name = {{!!Name}} />\n<$macrocall $name=\"checkHasTitle\" />\n<$macrocall $name=\"checkBioExists\" name={{!!Name}} title={{!!BioTitle}} />\n\n|table-style|k\n|Employee Name|<<employeeSelection>>|\n|Bio Title|<$edit-text field=\"BioTitle\" class=\"text-bar\" placeholder=\"Required\"/>|\n|Accreditation |<$edit-text field=\"Accreditation\" class=\"text-bar\"/>|\n|Areas Of Expertise |<$edit-text field=\"AreasOfExpertise\" class=\"text-bar\"/>|\n|Associations |<$edit-text field=\"Associations\" class=\"text-bar\"/>|\n|Awards| <$edit-text field=\"Awards\" class=\"text-bar\"/>|\n|Education| <$edit-text field=\"Education\" class=\"text-bar\"/>|\n|Job Title|<$edit-text field=\"JobTitle\" class=\"text-bar\"/>|\n|Keywords|<$edit-text field=\"Keywords\" class=\"text-bar\"/>|\n|Start Year|<$edit-text field=\"StartYear\" class=\"text-bar\"/>|\n\n<h3>Bio Text:</h3>\n<$edit-text field=\"Description\" class = \"tw-edit-texteditor myTextEdit\" tag=\"textarea\" placeholder=\"Required\"/>\n\n<h3> General Notes: </h3>\n<$edit-text field=\"Notes\" class = \"tw-edit-texteditor myTextEdit\" tag=\"textarea\"/>\n\n<$button>\nGenerate Bio\n<$macrocall $name=\"Generate\" EmpName={{!!Name}} BioTitle={{!!BioTitle}}/>\n</$button>\n<$button>\nClear Form\n<<clear>>\n</$button>",
+        "title": "Create New Bio",
+        "modified": "20220803191453310",
+        "tags": "Creator [[Create New]]",
+        "type": "text/vnd.tiddlywiki",
+        "Accreditation": "",
+        "AreasOfExpertise": "",
+        "Associations": "",
+        "Awards": "",
+        "BioTitle": "Lewis Bio",
+        "Description": "Over the course of his career, Ryan has been involved with complex and challenging projects in the Alberta Capital Region, including managing several LRT Renewal projects on the original Capital Line. This helped him gain a deep understanding of construction methods, processes, and coordination. After years of experience acting as a project manager for a large general contractor Ryan joined SMA and has been primarily focused on the pre-procurement tasks for the City of Edmonton's Capital Line LRT Extension. His skillset, informed by his previous work on facilities, transportation, and other capital projects, also includes project management plan development, risk management, integrated cost and schedule risk analysis modeling, change management, and delivery method analysis. Ryan is a registered Professional Engineer with APEGA and holds a Master’s in Engineering Management.\n\n",
+        "Education": "",
+        "JobTitle": "",
+        "Keywords": "",
+        "Name": "Ryan Cusveller",
+        "Notes": "",
+        "StartYear": ""
+    }
+]

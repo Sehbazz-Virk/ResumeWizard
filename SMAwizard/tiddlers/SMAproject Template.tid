@@ -1,0 +1,31 @@
+ResumeDescription: This is sample text, the actual Resume description of the project will appear here.
+created: 20220203164317670
+longdescription: This is sample text, the actual long description of the project will appear here.
+modified: 20220505202721871
+numEmployees: 0
+shortdescription: This is sample text, the actual short description of the project will appear here.
+tags: Code Template
+title: SMAproject Template
+type: text/vnd.tiddlywiki
+
+<h3>Short Description:</h3>
+<$edit-text field="shortdescription" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+<h3>Long Description:</h3>
+<$edit-text field="longdescription" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+<h3>Resume Description:</h3>
+<$edit-text field="ResumeDescription" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+<h3>One Liner Description:</h3>
+<$edit-text field="one_liner_description" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+<$set name="numEmps" filter="[tag[Entry]field:EntryType[Experience]field:ProjectTitleLink<currentTiddler>count[]]">
+
+<h3>Employees on this project: <<numEmps>> </h3>
+<$list filter="[tag[Entry]field:EntryType[Experience]field:ProjectTitleLink<currentTiddler>]" > <$link to={{!!Name}}> <li>{{!!Name}} </li></$link></$list>
+
+</$set>
+
+<$button>
+Create Experience Linked to this project
+<$action-setfield $tiddler="Create New Experience" ProjectName=<<currentTiddler>> Personal=0/>
+<$action-navigate $to="Create New Experience">
+</$button>

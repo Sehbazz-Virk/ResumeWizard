@@ -1,0 +1,7 @@
+created: 20220204195417593
+modified: 20220208160153206
+tags: TableOfContents
+title: Resumes and Tables
+type: text/vnd.tiddlywiki
+
+<<list-links filter:"[tag<currentTiddler>]">>

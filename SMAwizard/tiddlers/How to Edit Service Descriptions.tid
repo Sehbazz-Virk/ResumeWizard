@@ -1,0 +1,25 @@
+created: 20220223175516728
+modified: 20220228175547090
+title: How to Edit Service Descriptions
+type: text/vnd.tiddlywiki
+
+''To Edit Service Description Text:''
+
+* Find the service description you would like to edit and edit the text directly in the text boxes.
+* The area below the horizontal line is provided to make copying and pasting into google docs easier. 
+
+''Images:''
+
+Images are a new entryType added to the wiki because services often come with Images. To add a new Image:
+
+* Drag and drop the image into the wiki (If you see a green bar at the top of the page saying "Drop here", the drop will succeed)
+* In the "Import" tiddler that appears, confirm the import by clicking "Import"
+* The image will be imported in a tiddler that has the same name as the image file. In the future you can find the image here and copy/paste it out.
+
+''To Create New Service Description:''
+
+* Clone any existing Service Description
+* Modify the following fields in the Edit view to describe the new service description:
+** Title
+** service_name
+* Save the tiddler and enter the Description and Sample Projects in the main text boxes

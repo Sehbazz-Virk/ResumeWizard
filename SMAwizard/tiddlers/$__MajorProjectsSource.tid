@@ -1,0 +1,44 @@
+created: 20220505173506737
+low: 10
+modified: 20220609215325120
+tags: exported
+title: $:/MajorProjectsSource
+type: text/vnd.tiddlywiki
+
+\define selectLow()
+<$edit-text tiddler="$:/MajorProjectsSource" field=low class="input"/>
+\end
+
+\define customTOC()
+<$reveal type="match" state="$:/MajorProjectShow" text="hide">
+<$button setTitle="$:/MajorProjectShow" setTo="show" class="tc-btn-invisible" >
+{{$:/core/images/right-arrow}}
+</$button>
+</$reveal>
+<$reveal type="match" state="$:/MajorProjectShow" text="show">
+<$button setTitle="$:/MajorProjectShow" setTo="hide" class="tc-btn-invisible" >
+{{$:/core/images/down-arrow}}
+</$button>
+</$reveal>
+<$link to="Major Projects">''Major Projects''</$link>
+\end
+
+<<customTOC>>
+
+<$reveal type="match" state="$:/MajorProjectShow" text="show">
+@@.list-margin
+''Minimum Employees:'' <<selectLow>>
+@@
+<$list filter="[tag[Entry]field:EntryType[SMAproject]]-[[Personal]]">
+<$set name=tiddlerName value=<<currentTiddler>> >
+<$list filter="[tag[Entry]field:EntryType[Experience]field:ProjectTitleLink<currentTiddler>count[]compare:integer:gteq{$:/MajorProjectsSource!!low}]">
+
+@@.list-margin
+<$link to=<<tiddlerName>> overrideClass="text"><<tiddlerName>></$link>
+@@
+
+</$list>
+</$set>
+</$list>
+
+</$reveal>

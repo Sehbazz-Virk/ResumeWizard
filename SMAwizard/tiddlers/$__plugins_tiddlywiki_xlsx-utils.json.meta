@@ -1,0 +1,8 @@
+dependents: $:/plugins/tiddlywiki/jszip
+description: XLSX spreadsheet utilities
+list: readme controls license
+name: XLSX Utils
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/xlsx-utils
+type: application/json
+version: 5.2.1

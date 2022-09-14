@@ -1,0 +1,15 @@
+created: 20220511202104526
+modified: 20220511203013535
+tags: exported
+title: Major Projects
+type: text/vnd.tiddlywiki
+
+<$list filter="[tag[Entry]field:EntryType[SMAproject]]-[[Personal]]">
+<$set name=tiddlerName value=<<currentTiddler>> >
+<$list filter="[tag[Entry]field:EntryType[Experience]field:ProjectTitleLink<currentTiddler>count[]compare:integer:gteq{$:/MajorProjectsSource!!low}]">
+
+<$link to=<<tiddlerName>>><<tiddlerName>></$link>
+
+</$list>
+</$set>
+</$list>

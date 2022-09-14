@@ -1,0 +1,15 @@
+created: 20220207172539930
+modified: 20220209180909967
+tags: $:/tags/table/BodyTemplate
+tbl-column-list: Resume
+tbl-noedit: Resume
+title: $:/plugins/aaldrich/tables/template/body/hasResume
+type: text/vnd.tiddlywiki
+
+<td style="width:1.4ch;text-align:center;">
+  <$tiddler tiddler = <<currentRecord>> >
+    <$list filter="[all[current]!field:ResumeDescription[]]">
+      {{TableCheckmark_SVG}}
+    </$list>
+  </$tiddler>
+</td>

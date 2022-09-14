@@ -1,0 +1,26 @@
+created: 20220204185248669
+modified: 20220215221735045
+tags: $:/tags/table/BodyTemplate
+tbl-column-list: projectSize
+tbl-noedit: projectSize
+title: $:/plugins/aaldrich/tables/template/body/projectSize
+type: text/vnd.tiddlywiki
+
+<td style="width:1.4ch;">
+<$tiddler tiddler=<<currentRecord>> >
+  <$list filter = "[all[current]field:EntryType[Experience]]" emptyMessage= "N/A">
+   <$list filter= "[all[current]!field:ProjectTitleLink[Personal]]" >
+    <$select tiddler=<<currentRecord>> field="showonresume" default="""<$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}""">
+     <option value="""<$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}""">Normal</option>
+     <option value="""<$transclude tiddler = {{!!ProjectTitleLink}} field="one_liner_description" /> {{!!Description}}""">One Liner</option>
+    </$select>
+  </$list>
+  <$list filter= "[all[current]field:ProjectTitleLink[Personal]]" >
+    <$select tiddler=<<currentRecord>> field="showonresume" default="""{{!!normaldescription}}""">
+     <option value="""{{!!normaldescription}}""">Normal</option>
+     <option value="""{{!!one_liner_description}}""">One Liner</option>
+    </$select>
+  </$list>
+ </$list>
+</$tiddler>
+</td>

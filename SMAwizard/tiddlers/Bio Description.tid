@@ -1,0 +1,28 @@
+created: 20220224215325479
+modified: 20220228222341027
+tags: Docs
+title: Bio Description
+type: text/vnd.tiddlywiki
+
+!!! __Biographies__
+
+Biographies are exactly what the name suggests. They are descriptions of an Employee's achievements and experiences. 
+
+The main page simply shows the Biography inside of a text box.
+
+The metadata associated with Bio's are shown below:
+
+| Accreditation | Areas Of Expertise | Associations |
+| Awards | Description | Education |
+| Job Title | Keywords | Name |
+| Start Year |  |  |
+
+__Related__:
+
+Bio tiddlers use the [[Bio Template]] to display their data. See the [[Bio Template Description]] for more details about the template and for resources about how templating works in general.
+
+The [[Create New Bio|Create New Bio Description]] tiddler is used to create new biographies.
+
+__Links__:
+
+[[Resume Builders||Resume Builder Description]] transclude Bios directly from Bio tiddlers. 

@@ -1,0 +1,17 @@
+created: 20220323205915063
+modified: 20220323212941257
+tags: Docs
+title: Employees CTD
+type: text/vnd.tiddlywiki
+
+The Employees Column Template is used in the Master Project Table to list the employees who worked on each project. 
+
+It works by searching the database for Experience entries where the ProjectTitleLink is the current row in the Master Project Table. When it finds an entry linked to the project in the current row, it lists the name of that employee in the Employees column.
+
+!!! Code:
+
+`<td style="width:1.4ch;">
+<$tiddler tiddler=<<currentRecord>> >
+  <$list filter="[tag[Entry]field:EntryType[Experience]field:ProjectTitleLink<currentTiddler>]" > <small> [{{!!Name}}]</small><br></$list>
+</$tiddler>
+</td>`

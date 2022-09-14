@@ -1,0 +1,15 @@
+created: 20220207171809251
+modified: 20220209180917236
+tags: $:/tags/table/BodyTemplate
+tbl-column-list: short
+tbl-noedit: short
+title: $:/plugins/aaldrich/tables/template/body/hasShort
+type: text/vnd.tiddlywiki
+
+<td style="width:1.4ch;text-align:center;">
+  <$tiddler tiddler = <<currentRecord>> >
+    <$list filter="[all[current]!field:Short Description[]]">
+      {{TableCheckmark_SVG}}
+    </$list>
+  </$tiddler>
+</td>

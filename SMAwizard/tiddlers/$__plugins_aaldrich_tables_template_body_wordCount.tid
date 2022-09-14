@@ -1,0 +1,13 @@
+created: 20220218211404172
+modified: 20220218212441080
+tags: $:/tags/table/BodyTemplate
+tbl-column-list: wordCount
+tbl-noedit: wordCount
+title: $:/plugins/aaldrich/tables/template/body/wordCount
+type: text/vnd.tiddlywiki
+
+<td style="width:1.4ch;text-align:center;">
+  <$tiddler tiddler = <<currentRecord>> >
+    {{!!word_count}}
+  </$tiddler>
+</td>

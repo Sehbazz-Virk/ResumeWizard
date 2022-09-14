@@ -1,0 +1,7 @@
+created: 20220203234730233
+modified: 20220321171109256
+tags: [[Resumes and Tables]]
+title: All SMA Resumes
+type: text/vnd.tiddlywiki
+
+<<list-links filter:"[tag[resume]!is[draft]]">>

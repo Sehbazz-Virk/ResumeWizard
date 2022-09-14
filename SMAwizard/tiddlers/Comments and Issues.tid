@@ -1,0 +1,10 @@
+comments: 
+created: 20220202175339535
+modified: 20220825154111850
+tags: [[Features and Issues]]
+title: Comments and Issues
+type: text/vnd.tiddlywiki
+
+<h2><b> Enter any comments, issues, or questions about the wiki in the text box below:</b> </h2>
+
+<$edit-text field="comments" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>

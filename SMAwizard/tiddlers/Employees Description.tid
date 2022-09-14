@@ -1,0 +1,11 @@
+created: 20220322213049330
+modified: 20220322214337434
+tags: Docs
+title: Employees Description
+type: text/vnd.tiddlywiki
+
+[[Employees]] is a [[Data Tiddler|https://tiddlywiki.com/static/DataTiddlers.html]] used to store the names of all the Employees who have resumes stored in the wizard.
+
+It is used to list the names of employees in various places, such as in the "Name" select-box on the Create Experience Tiddler. The other purpose of the Employee's DataTiddler is to keep track of which resume's need to be stored in the wiki. Since Resume tiddlers do not dynamically reference any templates^^1^^, when a change is made to the [[Resume Template]], [[Repopulate Resumes]] is used to recreate all the resumes in the database. [[Repopulate Resumes]] relies on [[Employees]] to know which resumes to create.
+
+<small> ^^1^^ This is still subject to change. Resumes builders do not currently use templating because in the past [[tables|http://tiddlytables.tiddlyspot.com/]] did not function through a [[template|https://tiddlywiki.com/static/Transclusion%2520with%2520Templates.html]]. Recently (March 2022) a workaround has been found but not fully investigated.</small>

@@ -1,0 +1,29 @@
+created: 20220323164510990
+modified: 20220323173803653
+tags: Docs
+title: Personal Experience Description
+type: text/vnd.tiddlywiki
+
+Personal Experience Entries are descriptions of experience acquired by an employee outside of SMA work. Generally, this means it is experience acquired before the employee joined SMA.
+
+There are two descriptions given in personal experience entries. 1) Normal Description, 2) one-liner description. There is a toggle that selects which description gets transcluded onto the resume in the resume builder table.
+
+Personal Experiences are not linked to any SMA project entry^^1^^. This means that when they are transcluded into Resumes, no SMA project description is available to show. Instead ONLY the description given in the experience entry is shown. So, personal experience entries need to have their full description given in the description field of the entry.
+
+There are 11 fields in Personal Experience entries given in alphabetical order below:
+
+#''EntryType:'' This is always "Experience" for personal and SMA experiences
+#''included:'' 0 when the experience is not being used in a resume, 1 when it is. This is controlled in the resume builder table.
+#''Keywords:'' Keywords to help search for the experience in tables.
+#''Name:'' Name of the employee who's experience this is
+#''normaldescription:'' Full size description of the experience
+#''one_liner_description:'' Short (Not necessarily 1 line but as short as is reasonable) description of the experience
+#''priority:'' Experiences shown on the resume are ordered by priority. Can be given a value in the resume builder.
+#''ProjectName:'' Name of project shown on the resume. ''NOT used to link to an SMA project entry''
+#''ProjectTitleLink:'' Used to link to an SMA project entry. In personal projects this is always "Personal"
+#''Services:'' Services provided by the employee during this experience
+#''showonresume:'' Controls what gets transcluded onto the resume, either the normal description or the one-liner description. The value of this field is controlled by the projectSize column, which has is behaviour defined in this column template^^2^^: [[$:/plugins/aaldrich/tables/template/body/projectSize]]
+
+<small>^^1^^ To be precise, they are linked to the SMA project entry called "Personal". It has no description, and acts merely as a placeholder for a project entry in the "ProjectTitleLink" field.</small>
+
+<small>^^2^^ Column templates are used in the tables in resume builders to make columns that have special purposes. For more details about Column Templates see [[Column Template Description]] </small>

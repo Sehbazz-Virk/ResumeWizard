@@ -1,0 +1,25 @@
+created: 20220218210345224
+modified: 20220421194824572
+tags: Code
+title: Service Description Template
+type: text/vnd.tiddlywiki
+word_count: <$count filter="[all[current]get[description]split[ ]]" />
+
+<h3> <b> Description: </b> </h3>
+<$edit-text field="description" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+<b>Edit Sample Projects </b> <br>
+<$edit-text field="sample_projects" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+Word Count: {{!!word_count}}
+
+<hr>
+
+!!! Description
+{{!!description}}
+
+!!! Sample Projects
+<$list filter="[all[current]list[!!sample_projects]]" >
+
+*{{!!title}}
+</$list>

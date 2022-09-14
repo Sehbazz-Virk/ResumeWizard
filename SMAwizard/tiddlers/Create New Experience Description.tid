@@ -1,0 +1,15 @@
+created: 20220321221548302
+modified: 20220323164445640
+tags: Docs
+title: Create New Experience Description
+type: text/vnd.tiddlywiki
+
+The "[[Create New Experience]]" Tiddler is used to add new Experience entries into the database.
+
+Start by deciding if the new tiddler is a Personal Experience or a "Linked" Experience:
+
+Personal experiences are generally acquired before joining SMA or where SMA was not involved. These will not be linked to any SMAproject entry, and will need their full description written in the "Experience Text" box.
+
+Linked Experiences happen while the employee is working with SMA. Their description text will start with a central description of the project (which you do not need to write since it is stored in the SMA project entry!) and then describe what that employee did on the project. While creating a Linked Experience, make sure the name of the project is spelled correctly. If it is not, a warning will appear in a yellow bar above.
+
+For details about how this tiddler is implemented see [[Create New Experience - Implementation]].

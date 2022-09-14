@@ -1,0 +1,17 @@
+created: 20220411175829405
+modified: 20220412155115843
+title: Additional Projects
+type: text/vnd.tiddlywiki
+
+* Do not exist as a separate type of project
+* We can still include them on Resumes - [[Example|Holly Parkis]]
+<hr>
+
+* Every Project that an employee has experience on will show under Additional Projects
+* If that experince is __selected__ it gets moved to the main section and its description gets added
+* Simplest way to add a new additional project:
+** Use [[Create New Experience]]
+** Select personal project
+** Fill out form
+** Do not enter any description
+** Click generate once all warnings are gone

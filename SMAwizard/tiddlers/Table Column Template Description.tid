@@ -1,0 +1,21 @@
+created: 20220323201054339
+modified: 20220323203115542
+tags: Docs
+title: Table Column Template Description
+type: text/vnd.tiddlywiki
+
+Table Column Templates describe how certain columns in dynamic tables should be rendered and how they should behave. They are used in the Resume Builder tables to implement the priority, project size, blank, and personal columns. For more details about Table Columns Templates and the TiddlyTables plugin, see [[This Website|http://tiddlytables.tiddlyspot.com]]. There are also more details under the "Columns -> Manage Column Templates" section in any table editing popup.
+
+[img[ColumnTemplateManager.png]]
+
+While there are many column templates that come in the TiddlyTables plugin, we created 9 more for some specific functionality. Each one has a tiddler explaining it linked below.
+
+# [[Employees|Employees CTD]]
+# [[emptyDesc|emptyDesc CTD]]
+# [[has1Liner|has1Liner CTD]]
+# [[hasLong|hasLong CTD]]
+# [[hasResume|hasResume CTD]]
+# [[hasShort|hasShort CTD]]
+# [[Personal|Personal CTD]]
+# [[projectSize||projectSize CTD]]
+# [[wordCount||wordCount CTD]]

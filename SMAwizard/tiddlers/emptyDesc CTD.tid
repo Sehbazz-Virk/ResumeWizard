@@ -1,0 +1,26 @@
+created: 20220323213911876
+modified: 20220323223134135
+tags: Docs
+title: emptyDesc CTD
+type: text/vnd.tiddlywiki
+
+The emptyDesc Column Template is used in the "Blank" column in the Resume Builder Tables. It's purpose is to show a ''B'' if there is a blank description in the current row. This column template will dynamically update to show the status of the descriptions over time.
+
+The template starts by checking if the current row is a Personal entry or not. If it is not a personal entry, it checks if the description field is empty, and renders a ''B'' if it is.
+
+If it is a Personal entry, the template checks both the "NormalDescription" and "one_liner_descriptions" if either one is empty it renders a ''B''.
+
+`<td style="width:1.4ch;text-align:center;">
+  <$tiddler tiddler = <<currentRecord>> >
+   <$list filter="[all[current]!field:ProjectTitleLink[Personal]]">  // If Is Not Personal
+    <$list filter="[all[current]field:Description[]]">  // If Description is empty
+      <b> B </b>  //render B
+    </$list>
+  </$list>
+  <$list filter="[all[current]field:ProjectTitleLink[Personal]]">  // If Is Personal
+    <$list filter="[all[current]field:normaldescription[]][all[current]field:one_liner_description[]]">  // If either one of the descriptions is empty
+      <b> B </b>  // render B
+    </$list>
+  </$list>
+ </$tiddler>
+</td>`

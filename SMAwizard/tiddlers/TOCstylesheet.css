@@ -1,0 +1,19 @@
+.input {
+    border: 0;
+    border-bottom: 1px solid #ACACAC;
+    width: 3ch;
+    padding: 2px;
+    text-align:center;
+}
+
+.text {
+    color: #999999;
+}
+
+.text:hover {
+    text-decoration: underline;
+}
+
+.list-margin {
+    margin-left: 10%
+}

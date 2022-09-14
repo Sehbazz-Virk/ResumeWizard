@@ -1,0 +1,7 @@
+created: 20220323223900444
+modified: 20220324160854189
+tags: Docs
+title: hasLong CTD
+type: text/vnd.tiddlywiki
+
+This column template is part of a series of columns that are used in the master project table to show which descriptions a project has. This column template shows a checkmark if the current row has a long description. Note this could be anything as this template only checks if the long field is not empty

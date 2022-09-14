@@ -1,0 +1,11 @@
+created: 20220411173638760
+modified: 20220411174851196
+title: Existing SMA project
+type: text/vnd.tiddlywiki
+
+* Existing SMA project does not appear in Resume Builder?
+* Employee does not have experience linked to that project
+** Use [[Create New Experience]]
+** Select the Employee and the Project
+** Fill in the fields
+** Click generate once all warnings are gone 

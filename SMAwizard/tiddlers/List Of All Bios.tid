@@ -1,0 +1,9 @@
+created: 20220131210056727
+modified: 20220228212811330
+tags: [[Record Lists]]
+title: List Of All Bios
+type: text/vnd.tiddlywiki
+
+!<$count filter="[tag[Entry]field:EntryType[Bio]]" /> Biographies In This Database:
+
+<<list-links filter:"[tag[Entry]field:EntryType[Bio]sort[]]">>

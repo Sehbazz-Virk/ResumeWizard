@@ -1,0 +1,165 @@
+created: 20220322164216507
+modified: 20220323164103567
+tags: Docs
+title: Create New Experience - Implementation
+type: text/vnd.tiddlywiki
+
+The [[Create New Experience]] tiddler is the largest tiddler in terms of code length in this wiki and takes advantage of many features in wikitext.
+
+It contains 8 Macros, click on their names to see more details.
+
+<$button class="tc-btn-invisible" popup=<<qualify "$:/temp/popup1">>>
+<b>1) GenerateLinked(EmpName, ProjName)</b>
+</$button>
+<$reveal type="nomatch" state=<<qualify "$:/temp/popup1">> text="">
+
+Used to call the [[action-createtiddler widget|https://tiddlywiki.com/static/ActionCreateTiddlerWidget.html]] when the experience is a Linked experience:
+
+`\define GenerateLinked(EmpName, ProjName)
+    <$action-createtiddler $basetitle="$EmpName$ - Experience - $ProjName$"
+    text="{{||Experience Entry Template}}"
+    Keywords={{!!Keywords}}
+    Description = {{!!Description}}
+    Notes = {{!!Notes}}
+    Services = {{!!Services}}
+    ProjectName = "$ProjName$"
+    ProjectTitleLink = "$ProjName$"
+    Name = "$EmpName$"
+    EntryType = "Experience"
+    included = "0"
+    tags = "Entry"
+    showonresume= """<$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}"""
+    project_text= """<$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" />"""
+>
+<$action-navigate $to=<<createTiddler-title>>/>
+    </$action-createtiddler>
+\end`
+</$reveal>
+
+<$button class="tc-btn-invisible" popup=<<qualify "$:/temp/popup2">>>
+<b> 2) GeneratePersonal(EmpName, ProjName) </b>
+</$button>
+<$reveal type="nomatch" state=<<qualify "$:/temp/popup2">> text="">
+
+Used to call the [[action-createtiddler widget|https://tiddlywiki.com/static/ActionCreateTiddlerWidget.html]] when the experience is a Personal experience. The only difference between 1) and 2) is the ProjectTitleLink. In 1) ProjectTitleLink is the name of the project, in 2) ProjectTitleLink is "Personal". This way Linked experiences can transclude the project description using the name in ProjectTitleLink and personal experiences can be differentiated from Linked experienes later on.
+
+`\define GeneratePersonal(EmpName, ProjName)
+<$action-createtiddler $basetitle="$EmpName$ - Experience - $ProjName$"
+    text="{{||Experience Entry Template}}"
+    Keywords={{!!Keywords}}
+    Description = {{!!Description}}
+    Notes = {{!!Notes}}
+    Services = {{!!Services}}
+    ProjectName = "$ProjName$"
+    ProjectTitleLink = "Personal"
+    Name = "$EmpName$"
+    EntryType = "Experience"
+    included = "0"
+    tags = "Entry"
+    showonresume= """<$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}"""
+    project_text= """<$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" />"""
+>
+    <$action-navigate $to=<<createTiddler-title>>/>
+</$action-createtiddler>
+\end`
+
+</$reveal>
+
+<$button class="tc-btn-invisible" popup=<<qualify "$:/temp/popup3">>>
+<b>3) checkProjectExists(ProjName)</b>
+</$button>
+<$reveal type="nomatch" state=<<qualify "$:/temp/popup3">> text="">
+This element checks if the supplied project name exists in the database or not, and gives a warning if it does not. It first checks to make sure the ProjectName field is not empty and that the experience is not personal, and then searches for a project with the given name.
+
+`<$list filter = "[all[current]!field:ProjectName[]!field:Personal[1]]">
+<$list filter="[tag[Entry]field:EntryType[SMAproject]field:title[$ProjName$]]" emptyMessage="<mark>This project ($ProjName$) doesn't exist. Make sure the project is an SMA project that exists in this database (If the project is a personal project, select the checkbox). </mark>" >
+</$list>
+</$list>`
+
+</$reveal>
+
+<$button class="tc-btn-invisible" popup=<<qualify "$:/temp/popup4">>>
+<b>4) checkNameExists(Name)</b>
+</$button>
+
+<$reveal type="nomatch" state=<<qualify "$:/temp/popup4">> text="">
+Performs the same task as 3) with employee names instead of project names.
+
+`<$list filter = "[all[current]!field:Name[]]">
+<$list filter="[[Employees]getindex[$Name$]]" emptyMessage="<mark>This employee ($Name$) doesn't exist. Make sure their name is spelled and capitalized correctly.</mark>" >
+</$list>
+</$list>`
+
+</$reveal>
+
+<b> Note: </b> In the most recent version the text boxes for project name and employee name have been replaced by select boxes, making elements 3 and 4 redundant.
+
+<$button class="tc-btn-invisible" popup=<<qualify "$:/temp/popup5">>>
+<b>5) checkAlreadyExists(EmpName, ProjName)</b>
+</$button>
+
+<$reveal type="nomatch" state=<<qualify "$:/temp/popup5">> text="">
+Checks if an experience entry already exists for this employee under this projectName. Gives a warning if it does.
+
+`<$list filter="[field:title[$EmpName$ - Experience - $ProjName$]]">
+"""<mark> $EmpName$ already has an experience entry for $ProjName$: [[$EmpName$ - Experience - $ProjName$]].</mark>"""
+</$list>`
+</$reveal>
+
+<$button class="tc-btn-invisible" popup=<<qualify "$:/temp/popup6">>>
+<b>6) clear()</b>
+</$button>
+
+<$reveal type="nomatch" state=<<qualify "$:/temp/popup6">> text="">
+Clears the text-boxes in the form by clearing the fields in the tiddler.
+
+`\define clear()
+<$action-setfield
+Associations=""
+Description=""
+Keywords=""
+Name=""
+Notes=""
+Personal=0
+ProjectName=""
+Services="" 
+/>
+\end`
+
+</$reveal>
+
+<$button class="tc-btn-invisible" popup=<<qualify "$:/temp/popup7">>>
+<b>7) projectSelection()</b>
+</$button>
+
+<$reveal type="nomatch" state=<<qualify "$:/temp/popup7">> text="">
+This element is a select box letting the user decide what project to link this experience to. This replaced the edit-text boxes which are still used for the Services and Keywords fields.
+
+`<$select field="ProjectName">
+<$list filter="[field:EntryType[SMAproject]]-[[Personal]]">
+<option value=<<currentTiddler>>><$view field='title'/></option>
+</$list>
+</$select>`
+
+</$reveal>
+
+<$button class="tc-btn-invisible" popup=<<qualify "$:/temp/popup8">>>
+<b>8) employeeSelection()</b>
+</$button>
+<$reveal type="nomatch" state=<<qualify "$:/temp/popup8">> text="">
+Performs the same task as 7) with employee names instead of projectNames.
+
+`<$select field="ProjectName">
+<$list filter="[field:EntryType[SMAproject]]-[[Personal]]">
+<option value=<<currentTiddler>>><$view field='title'/></option>
+</$list>
+</$select>`
+
+</$reveal>
+
+These macros are used later in the code to perform their various tasks. 
+
+''Comments:''
+
+*The myTextEdit class, a CSS class used to make large text boxes, is defined in [[CSS Class for Text Area Resizing]] and used in this tiddler.
+*The lists inside of the button at the bottom of the tiddler are used as if-statements to control the text shown in the button and what macro the button uses.

@@ -1,0 +1,115 @@
+created: 20220201201708550
+modified: 20220224171527055
+tags: $:/tags/Macro
+title: Global Macros
+type: text/vnd.tiddlywiki
+
+\define Save(included, oneLiners, saveName, empName, p1, p2, p3, p4, p5, p6, p7)
+<$action-createtiddler $basetitle="$empName$ - Resume Save - $saveName$" tags="save" type="application/x-tiddler-dictionary" $overwrite="yes"
+text = "toInclude: $included$
+oneLiners:$oneLiners$
+p1:$p1$
+p2:$p2$
+p3:$p3$
+p4:$p4$
+p5:$p5$
+p6:$p6$
+p7:$p7$"
+Name="$empName$"
+saveName="$saveName$" />
+\end
+
+\define Load(loadName, empName)
+<$button>
+Load Selected Resume
+<$list filter="[field:EntryType[Bio]][field:EntryType[Experience]]:and[field:Name[$empName$]tag[included]]" >
+    <$action-setfield tags="Entry" included="0" />
+</$list>
+<$list filter="[field:EntryType[Experience]field:Name[$empName$]]" >
+    <$action-setfield priority="8" />
+</$list>
+<$list filter="[tag[save]field:Name[$empName$]field:saveName[$loadName$]getindex[toInclude]split[~]]" >
+    <$action-setfield tags="""[[Entry]] [[included]]""" included="1" />
+</$list>
+<$list filter="[tag[save]field:Name[$empName$]field:saveName[$loadName$]getindex[oneLiners]split[~]]" >
+    <$list filter="[all[current]!field:ProjectTitleLink[Personal]]">
+        <$action-setfield showonresume="""<$transclude tiddler = {{!!ProjectTitleLink}} field="one_liner_description" /> {{!!Description}}""" />
+    </$list>
+    <$list filter="[all[current]field:ProjectTitleLink[Personal]]">
+        <$action-setfield showonresume="""{{!!one_liner_description}}""" />
+    </$list>
+</$list>
+<$list filter="[tag[save]field:Name[$empName$]field:saveName[$loadName$]getindex[p1]split[~]]" >
+    <$action-setfield priority="1"/>
+</$list>
+<$list filter="[tag[save]field:Name[$empName$]field:saveName[$loadName$]getindex[p2]split[~]]" >
+    <$action-setfield priority="2"/>
+</$list>
+<$list filter="[tag[save]field:Name[$empName$]field:saveName[$loadName$]getindex[p3]split[~]]" >
+    <$action-setfield priority="3"/>
+</$list>
+<$list filter="[tag[save]field:Name[$empName$]field:saveName[$loadName$]getindex[p4]split[~]]" >
+    <$action-setfield priority="4"/>
+</$list>
+<$list filter="[tag[save]field:Name[$empName$]field:saveName[$loadName$]getindex[p5]split[~]]" >
+    <$action-setfield priority="5"/>
+</$list>
+<$list filter="[tag[save]field:Name[$empName$]field:saveName[$loadName$]getindex[p6]split[~]]" >
+    <$action-setfield priority="6"/>
+</$list>
+<$list filter="[tag[save]field:Name[$empName$]field:saveName[$loadName$]getindex[p7]split[~]]" >
+    <$action-setfield priority="7"/>
+</$list>
+</$button>
+\end
+
+\define Saver()
+<$edit-text field=saveName placeholder="Resume Save Name" size =30 />
+<$list filter="[all[current]!field:saveName[]]">
+<$button>
+Save This Resume
+<$wikify name="toInclude" text="""<$list filter="[field:EntryType[Bio]][field:EntryType[Experience]]:and[tag[Entry]field:Name<currentTiddler>tag[included]]" >{{!!title}}~</$list>""">
+<$wikify name="one-liners" text="""<$list filter="[tag[Entry]field:EntryType[Experience]field:Name<currentTiddler>search:showonresume[one_liner]]" >{{!!title}}~</$list>""">
+<$wikify name="p1" text="""<$list filter="[tag[Entry]field:EntryType[Experience]field:Name<currentTiddler>field:priority[1]]" >{{!!title}}~</$list>""">
+<$wikify name="p2" text="""<$list filter="[tag[Entry]field:EntryType[Experience]field:Name<currentTiddler>field:priority[2]]" >{{!!title}}~</$list>""">
+<$wikify name="p3" text="""<$list filter="[tag[Entry]field:EntryType[Experience]field:Name<currentTiddler>field:priority[3]]" >{{!!title}}~</$list>""">
+<$wikify name="p4" text="""<$list filter="[tag[Entry]field:EntryType[Experience]field:Name<currentTiddler>field:priority[4]]" >{{!!title}}~</$list>""">
+<$wikify name="p5" text="""<$list filter="[tag[Entry]field:EntryType[Experience]field:Name<currentTiddler>field:priority[5]]" >{{!!title}}~</$list>""">
+<$wikify name="p6" text="""<$list filter="[tag[Entry]field:EntryType[Experience]field:Name<currentTiddler>field:priority[6]]" >{{!!title}}~</$list>""">
+<$wikify name="p7" text="""<$list filter="[tag[Entry]field:EntryType[Experience]field:Name<currentTiddler>field:priority[7]]" >{{!!title}}~</$list>""">
+<$macrocall $name="Save" included=<<toInclude>> oneLiners=<<one-liners>> saveName={{!!saveName}} empName=<<currentTiddler>> 
+                                               p1=<<p1>> p2=<<p2>> p3=<<p3>> p4=<<p4>> p5=<<p5>> p6=<<p6>> p7=<<p7>>/>
+</$wikify>
+</$wikify>
+</$wikify>
+</$wikify>
+</$wikify>
+</$wikify>
+</$wikify>
+</$wikify>
+</$wikify>
+</$button>
+</$list>
+\end
+
+\define Loader()
+<$select field=loadName tooltip="Select a Resume to Load">
+<$list filter="[tag[save]field:Name<currentTiddler>]">
+<option><$view field='saveName'/></option>
+</$list>
+</$select>
+<$macrocall $name="Load" loadName={{!!loadName}} empName=<<currentTiddler>> />
+\end
+
+\define Delete(empName, saveName)
+<$action-confirm $message="Do you wish to delete $empName$ - Resume Save - $saveName$?">
+<$action-deletetiddler $tiddler="$empName$ - Resume Save - $saveName$" />
+</$action-confirm>
+\end
+
+\define Deleter()
+<$button>
+Delete Selected Resume
+<$macrocall $name="Delete" empName=<<currentTiddler>> saveName={{!!loadName}} />
+</$button>
+\end

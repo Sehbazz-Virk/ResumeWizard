@@ -1,0 +1,9 @@
+created: 20220411210335763
+modified: 20220411211309793
+title: Linking New SMA Project To Staff Working On It
+type: text/vnd.tiddlywiki
+
+* Employees list in SMA project entries
+* Populated automatically by finding all Employees with an experience linked to that entry
+* Use [[Create New Experience]] to link project and employee
+* Shortcut: "Create Experience Linked to this project" button pre-selects the project

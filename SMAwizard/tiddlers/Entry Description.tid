@@ -1,0 +1,21 @@
+created: 20220224202314391
+modified: 20220228222406828
+tags: Docs
+title: Entry Description
+type: text/vnd.tiddlywiki
+
+<h3> __What are Entries__ </h3>
+
+"Entries" in this Wiki are pieces of data describing different Projects, Experiences, Biographies, or Services. Each entry comes with atleast one description. Entries also come with metadata which is used to give more details or link the Entry to other Entries.
+
+There are 5 Entry Types (Click on any of these links for more details:
+
+* [[SMAprojects|SMAproject Description]]
+* [[Employee Biographies|Bio Description]]
+* Experiences
+** [[Personal Experiences| Personal Experience Description]] (Experiences of an Employee outside of SMA projects)
+** [[SMA Experiences|SMA Experience Description]]
+* [[Service descriptions|Service Description - Description]]
+* Images
+
+These entries are often linked to eachother, with one entry directly copying text from another, in order to create consistency during editing. The goal while designing this Wiki was to ensure that no change would have to be made in more than one place. For example, any change made to a project description will immediately be reflected in every resume using that project as an experience.

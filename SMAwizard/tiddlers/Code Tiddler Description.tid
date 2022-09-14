@@ -1,0 +1,10 @@
+created: 20220322215908163
+modified: 20220323201406337
+tags: Docs
+title: Code Tiddler Description
+type: text/vnd.tiddlywiki
+
+Code Tiddlers contain macros, templates, and scripts that run the wizard. These are similar to System tiddlers in that they do not store data. Also, if any system tiddler has been altered while building the wizard we have classified it as a Code tiddler. There are various types of code tiddlers, all listed below.
+
+!!!! [[Table Column Templates|Table Column Template Description]]
+

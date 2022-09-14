@@ -1,0 +1,9 @@
+created: 20220131234036809
+modified: 20220204194457953
+tags: [[Record Lists]]
+title: List Of All Experiences
+type: text/vnd.tiddlywiki
+
+!<$count filter="[tag[Entry]field:EntryType[Experience]]" /> Experience Entries In This Database:
+
+<<list-links filter:"[tag[Entry]field:EntryType[Experience]]">>

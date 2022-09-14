@@ -1,0 +1,31 @@
+Current Version: 0.0.1
+created: 20220125215010490
+modified: 20220506201236472
+tags: TableOfContents
+title: 🧙 Overview
+type: text/vnd.tiddlywiki
+
+This is SMA's Resume Generator. It stores data (bios, project descriptions, etc.) in a modular format. Each record stores a chunk of text that could go in the resume as well as metadata that helps you choose which records to include. The resume template for each employee is called //Employee Name// and has two parts: an interactive table that shows you all records related to that person and the resume text that is generated from the records. 
+
+!! List of All Resumes: [[All SMA Resumes]]
+
+''Add Content to the Resume''
+Records, which include both the bio and the projects, are included by checking the box on the left. 
+
+''Sorting''
+The bio will always be first. You can choose the order of projects using the Priority column; it will default to alphabetical. The table sorting order doesn't affect the record order. 
+
+''Additional Projects''
+Projects that aren't checked for full inclusion will show up in the Additional Projects list. 
+
+''InDesign''
+Once you have selected the records and fixed the order, you can simply copy and paste into the InDesign resume template for that person. 
+
+''Short Resumes''
+There is a "One Liner" option for Projects -- if you are making a two-pager resume, you can toggle shorter project descriptions. You will need to use the dropdown in the resume table field. 
+
+!! Editing Content
+If there are errors or if you want to update the content, you can items in the drop down below each record. Click the "caret" icon to expand. There is also a link to the master project record. 
+
+!! Bulk Selection
+If you're setting up multiple resumes and want everyone to have the same projects, you can select bios and projects for multiple people in the [[Master Bio & Experience List]] before opening the individual resume templates. The "checked" status is shared. 

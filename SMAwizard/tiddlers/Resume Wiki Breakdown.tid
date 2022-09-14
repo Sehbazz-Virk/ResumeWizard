@@ -1,0 +1,39 @@
+created: 20220224185922658
+modified: 20220322163401701
+tags: Docs
+title: Resume Wiki Breakdown
+type: text/vnd.tiddlywiki
+
+All [[Tiddlers|https://tiddlywiki.com/static/Tiddlers.html]] in this Wiki can be split into these categories:
+
+[[Resume Builders|All SMA Resumes]] that help build resumes for each employee.
+
+Entries, which contain data and interfaces to edit the data:
+
+* [[SMAprojects|SMAproject Description]]
+* [[Employee Biographies|Bio Description]]
+* Experiences
+** [[Personal Experiences| Personal Experience Description]] (Experiences of an Employee outside of SMA projects)
+** [[SMA Experiences|SMA Experience Description]]
+* [[Service descriptions|Service Description - Description]]
+* Images
+
+Tables, which show overviews of all the data available in the Wiki:
+
+<<list-links filter:"[tag[Resumes and Tables]]" >>
+
+These tables are populated by searching for all entries that have a certain tag or field. This way as entries get added or deleted the tables are automatically updated.
+
+Tiddlers that help create new Entries:
+
+<<list-links filter:"[tag[Create New]addsuffix[ Description]]" >>
+
+These tiddlers could be replaced by just copying and editing an existing tiddler of that type, but we felt this process is more robust and streamlined. Service descriptions and images are now the only entry types which do not have a dedicated "Create New" tiddler.
+
+Various Tiddlers to help manage the wiki and keep track of work:
+
+<<list-links filter:"[tag[Active Pursuits]][tag[Data Management and To Do]][tag[Features and Issues]]" >>
+
+And [["Code" tiddlers|Code Tiddler Description]] that run the wiki on the backend:
+
+
