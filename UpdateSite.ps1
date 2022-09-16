@@ -1,7 +1,12 @@
-﻿# Build single file verion of Wizard and move to location expected by Github Pages
+﻿#Move old index file to backups
+$backupDate = Get-Date -Format "dd/MM/yyyy_HHmm"
+$Destination = ".\backup\index_" + $backupDate + ".html"
+Write-Output $Destination
+Move-Item -Path .\docs\index.html -Destination $Destination
+
+# Build single file verion of Wizard and move to location expected by Github Pages
 tiddlywiki SMAwizard --build index
-Remove-Item -Path .\docs\index.html
-Move-Item -Path .\SMAwizard\output\index.html -Destination .\docs\index.html
+Copy-Item -Path .\SMAwizard\output\index.html -Destination .\docs\index.html
 
 # Get commit message
 $commitMessage = Read-Host -Prompt "Commit Message"
