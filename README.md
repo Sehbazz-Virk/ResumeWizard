@@ -7,5 +7,7 @@ It's purpose is to store snippets of resume text for every employee at SMA and e
 The Wizard is still used at SMA, where it stores and manipulates data for 100+ biographies, 200+ projects, and 1000+ descriptions of experience. SMA has kindly let me display The Wizard online, and I have added some (frivolous) sample projects and employees to demonstrate it's workings. Note that the Wizard at SMA was hosted in a way to allow users to make changes to the underlying data. This deployment is configured so that any changes only appear on your browser.
 
 Please email me with any questions, suggestions, or general discussions you have!
+
 -Sehbazz Virk
+
 Sehbazz@ualberta.ca
