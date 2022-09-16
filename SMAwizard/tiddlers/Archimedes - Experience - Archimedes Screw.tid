@@ -1,0 +1,19 @@
+EntryType: Experience
+Keywords: 
+Name: Archimedes
+Notes: 
+ProjectName: Archimedes Screw
+ProjectTitleLink: Personal
+Services: 
+created: 20220916181937871
+included: 0
+modified: 20220916182002678
+normaldescription: One of the earliest examples of a mechanical pump, Archimedes' screw was able to both generate power from the flow of water and push water up a slope. advancement revolutionized irrigation. Archimedes was responsible for the design and implementation.
+one_liner_description: Archimedes was responsible for the design and implementation of one of the earliest examples of a mechanical pump.
+priority: 8
+showonresume: {{!!normaldescription}}
+tags: Entry
+title: Archimedes - Experience - Archimedes Screw
+type: text/vnd.tiddlywiki
+
+{{||Personal Experience Entry Template}}

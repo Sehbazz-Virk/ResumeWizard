@@ -1,5 +1,5 @@
 created: 20220412215332541
-modified: 20220915234921863
+modified: 20220916182148071
 tags: Docs
 title: Frequently Asked Questions
 type: text/vnd.tiddlywiki
@@ -10,7 +10,7 @@ Create an Employee's resume in [[their Resume builder|All SMA Resumes]], then co
 
 ''What is an Entry?''
 
-An Entry is a record that contains a description of some topic. For example, the Entry called [[Green Line LRT]] describes the Green Line LRT and SMA's role on the project. The Wizard uses these entries to build resumes.
+An Entry is a record that contains a description of some topic. For example, the Entry called [[Parthenon]] describes the Parthenon and SMA's role on the project. The Wizard uses these entries to build resumes.
 
 ''What is an SMA project Entry?''
 
@@ -22,7 +22,7 @@ Linked experiences describe what an employee did on an __SMA project__ (They are
 
 ''What is a Personal Experience?''
 
-Personal experiences describe what an employee did on a non-SMA project. A good example is Agnieszka's Experience at [[Alldritt Tower|Agnieszka Dobrski - Experience - Alldritt Tower]], or Roy's Experience at the [[Qatar Pearl GTL|Roy Labban - Experience - Qatar Pearl GTL]]. Since these entries cannot pull a project description from an SMA project entry, the full project and experience description needs to be given in the Experience Entry.
+Personal experiences describe what an employee did on a non-SMA project. A good example is Archimedes' Experience with the [[Archimedes Screw|Archimedes - Experience - Archimedes Screw]]. Since these entries cannot pull a project description from an SMA project entry, the full project and experience description needs to be given in the Experience Entry.
 
 ''How Do I Build a Bio?''
 
@@ -46,14 +46,6 @@ Tip: Additional projects obey the priority assigned to them. To make it easy to 
 
 Those lists are populated by searching for every employee that has an experience linked to that project. So, to add an employee to that list, create an experience entry for that employee on that project.
 
-''How do I add images to service descriptions?''
-
-#Drag and drop the image into the Wizard. A green bar above saying "Drop Here" will appear. 
-#A Tiddler will appear prompting you to import the image. Click Import.
-#Go to the service description, whereever you would like the image to be included in the description add the following text : `[img[<IMAGE_NAME>]]`
-
-See [[Service Description - Risk Assessment - Workshops (EPCOR)]] for an example.
-
 ''What do I do if I deleted something by mistake or if something might be broken?''
 
-This is not uncommon, but it is not a serious issue either. Since this Tiddlywiki is stored on a server, occasional errors can cause records to be lost while editing. We recommend saving progress very often. However, backups of the Wizard are created frequently and stored on the Google Drive. Contact Sehbazz on slack to replace any lost records (Or if you have any other questions). 
+This is not uncommon, but it is not a serious issue either. Since this Tiddlywiki is hosted on a server, occasional errors can cause records to be lost while editing. We recommend saving progress very often. However, backups of the Wizard are created frequently and stored on the Google Drive. Contact Sehbazz on slack to replace any lost records (Or if you have any other questions). 
