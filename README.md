@@ -8,5 +8,5 @@ custom resumes quickly since resumes need to get submitted in any job proposal. 
 experiences, descriptions, and various other settings. As I developed it it went on to allow users to write new sections, work on multiple resumes at a time,
 and generally speed up the resume writing process. The Wizard became a powerful tool to give SMA an edge over other firms during the proposal writing process.
 
-The Wizard is still used at SMA, where it stores and manipulates data for 100+ biographies, 200+ projects, and 1000+ descriptions of experience. SMA has kindly let me
+The Wizard is still used at SMA, where it stores and manipulates data for 100+ biographies, 200+ projects, and 1000+ overall entries. SMA has kindly let me
 display the wizard online, and I have added some sample projects and employees to demonstrate it's workings.
