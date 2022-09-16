@@ -1,0 +1,18 @@
+Description: Pythagoras managed the marketing and outwards communication for The First Olympics.
+EntryType: Experience
+Keywords: 
+Name: Pythagoras
+Notes: 
+ProjectName: The First Olympics
+ProjectTitleLink: The First Olympics
+Services: 
+created: 20220916013304241
+included: 0
+modified: 20220916013304241
+project_text: <$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" />
+showonresume: <$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}
+tags: Entry
+title: Pythagoras - Experience - The First Olympics
+type: text/vnd.tiddlywiki
+
+{{||Experience Entry Template}}

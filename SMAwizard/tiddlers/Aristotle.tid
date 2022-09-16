@@ -1,0 +1,72 @@
+created: 20220916012112449
+loadName: 
+modified: 20220916012112449
+saveName: 
+search: 
+tags: resume
+tbl-add-records: 
+tbl-anything: <$select tiddler=<<currentRecord>> field="priority" default="8"><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option></$select>
+tbl-button-actions: <$action-navigate $to=<<currentRecord>> />
+tbl-button-icon: {{$:/core/images/file}}
+tbl-button-tip: 
+tbl-caption: ''{{!!title}}''
+tbl-checkbox-actions-selected: 
+tbl-checkbox-actions-unselected: 
+tbl-checkbox-field: included
+tbl-checkbox-tag: included
+tbl-checkbox-tip: 
+tbl-checkbox-value-selected: 1
+tbl-checkbox-value-unselected: 0
+tbl-class: tbl-style-default
+tbl-columns: tbl-checkbox included tbl-expand title EntryType Keywords priority projectSize Blank Personal
+tbl-expand: $:/plugins/aaldrich/tables/template/expand/transclude
+tbl-filter: [tag[Entry]field:Name<currentTiddler>search:*<searchTerm>]
+tbl-limit: 9999999
+tbl-mode: normal
+tbl-page-marker: 
+tbl-selected-record: 
+tbl-show-caption: true
+tbl-show-colgroup: false
+tbl-show-edit: true
+tbl-show-footer: false
+tbl-show-header: true
+tbl-show-mode: true
+tbl-show-pagination: false
+tbl-sort-by: included
+tbl-sort-negate: false
+tbl-sort-type: nsort
+tbl-style-colgroup: 
+tbl-style-container: 
+tbl-style-table: width:100%;
+title: Aristotle
+type: text/vnd.tiddlywiki
+
+!PROFILE
+<$list filter="[tag[included]field:Name<currentTiddler>field:EntryType[Bio]]">
+{{!!Description}}
+</$list>
+
+!PROJECTS
+<$list filter="[tag[included]field:Name<currentTiddler>field:EntryType[Experience]sort[priority]]">
+<$transclude tiddler={{!!ProjectTitleLink}} field="trophy"/><$link to={{!!ProjectTitleLink}}><$view field="ProjectName"/></$link> — {{!!showonresume}} <br>
+
+</$list>
+
+!ADDITIONAL PROJECTS
+<$list filter="[!tag[included]field:Name<currentTiddler>field:EntryType[Experience]sort[priority]]">
+<$link to={{!!ProjectTitleLink}}>+<$view field="ProjectName"/></$link><br>
+</$list>
+
+<hr>
+
+<<Saver>>
+
+<<Loader>><<Deleter>>
+
+<$edit-text field="search" placeholder="Search in table" />
+<$vars searchTerm={{!!search}}>
+<$list filter="[all[current]!field:search[]]" variable=null emptyMessage='<small> All Entries: <$count filter="[tag[Entry]field:Name<currentTiddler>]"/></small>'>
+<small><$count filter="[tag[Entry]field:Name<currentTiddler>search:*<searchTerm>]"/> matches</small>
+</$list>
+<br>//Note: A "B" in the Blank column indicates that at least one description of that record is missing. Add a description by expanding the entry. //
+<<table>>

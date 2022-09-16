@@ -1,0 +1,18 @@
+Description: Socrates managed the athlete sourcing and event planning for The First Olympics.
+EntryType: Experience
+Keywords: 
+Name: Socrates
+Notes: 
+ProjectName: The First Olympics
+ProjectTitleLink: The First Olympics
+Services: 
+created: 20220916013336298
+included: 0
+modified: 20220916013336298
+project_text: <$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" />
+showonresume: <$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}
+tags: Entry
+title: Socrates - Experience - The First Olympics
+type: text/vnd.tiddlywiki
+
+{{||Experience Entry Template}}

@@ -1,0 +1,71 @@
+Description: 
+created: 20220323224601145
+modified: 20220915235132719
+sample_projects: 
+service: 
+suffix: 
+tags: [[Create New]]
+title: Create New Service Description
+type: text/vnd.tiddlywiki
+
+\define Generate(service, nameSuffix)
+<$action-createtiddler $basetitle="Service Description - $service$ - $nameSuffix$"
+text="{{||Service Description Template}}"
+description = {{!!Description}}
+sample_projects = {{!!sample_projects}}
+service_name = "$service$"
+EntryType = "Service Description"
+tags = "Entry"
+word_count="""<$count filter="[all[current]get[description]split[ ]]" />"""
+>
+<$action-navigate $to=<<createTiddler-title>>/>
+</$action-createtiddler>
+\end
+
+\define checkAlreadyExists(service, nameSuffix)
+<$list filter = "[all[current]!field:service[]!field:suffix[]]">
+<$list filter="[field:title[Service Description - $service$ - $nameSuffix$]]">
+<mark> A Service description called <b> Service Description - $service$ - $nameSuffix$ </b> already exists! </mark>
+</$list>
+</$list>
+\end
+
+\define clear()
+<$action-setfield 
+sample_projects="" 
+Description=""
+suffix="" 
+service="" 
+/>
+\end
+
+<h2> Enter the information for the new Service Description </h2>
+
+<$macrocall $name="checkAlreadyExists" service={{!!service}} nameSuffix = {{!!suffix}} />
+
+|table-style|k
+|Service Name|<$edit-text field="service" class="text-bar" />|
+|Suffix |<$edit-text field="suffix" class="text-bar" />|
+
+The New Service Description will be called <b> Service Description - {{!!service}} - {{!!suffix}} </b>
+
+<h3> Description text: </h3>
+<$edit-text field="Description" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+<h3> Sample Projects </h3>
+Enter Sample Projects In The Following Format:
+
+`[[Sample Project 1]]` <br>
+`[[Sample Project 2]]` <br>
+`[[Sample Project 3]]` <br>
+
+<$edit-text field="sample_projects" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+<$button>
+Generate
+<$macrocall $name="Generate" service={{!!service}} nameSuffix = {{!!suffix}} />
+</$button>
+<$button>
+Clear
+<$macrocall $name="clear" />
+</$button>

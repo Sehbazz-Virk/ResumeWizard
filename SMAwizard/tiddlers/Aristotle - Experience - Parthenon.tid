@@ -1,0 +1,18 @@
+Description: Aristotle, a student of Plato, supported Plato's efforts in cost and budget analysis.
+EntryType: Experience
+Keywords: 
+Name: Aristotle
+Notes: 
+ProjectName: Parthenon
+ProjectTitleLink: Parthenon
+Services: 
+created: 20220916011422884
+included: 0
+modified: 20220916011448789
+project_text: <$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" />
+showonresume: <$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}
+tags: Entry
+title: Aristotle - Experience - Parthenon
+type: text/vnd.tiddlywiki
+
+{{||Experience Entry Template}}

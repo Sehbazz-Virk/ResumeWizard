@@ -1,0 +1,149 @@
+Associations: 
+Description: Socrates managed the athlete sourcing and event planning for The First Olympics.
+Keywords: 
+Name: Socrates
+Notes: 
+Personal: 0
+ProjectName: The First Olympics
+Services: 
+created: 20220207202211742
+modified: 20220916013334458
+tags: [[Create New]]
+title: Create New Experience
+type: text/vnd.tiddlywiki
+
+\define GenerateLinked(EmpName, ProjName)
+<$action-createtiddler $basetitle="$EmpName$ - Experience - $ProjName$"
+text="{{||Experience Entry Template}}"
+Keywords={{!!Keywords}}
+Description = {{!!Description}}
+Notes = {{!!Notes}}
+Services = {{!!Services}}
+ProjectName = "$ProjName$"
+ProjectTitleLink = "$ProjName$"
+Name = "$EmpName$"
+EntryType = "Experience"
+included = "0"
+tags = "Entry"
+showonresume= """<$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}"""
+project_text= """<$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" />"""
+>
+<$action-navigate $to=<<createTiddler-title>>/>
+</$action-createtiddler>
+\end
+
+\define GeneratePersonal(EmpName, ProjName)
+<$action-createtiddler $basetitle="$EmpName$ - Experience - $ProjName$"
+text="{{||Personal Experience Entry Template}}"
+Keywords={{!!Keywords}}
+normaldescription = {{!!Description}}
+Notes = {{!!Notes}}
+Services = {{!!Services}}
+ProjectName = "$ProjName$"
+ProjectTitleLink = "Personal"
+Name = "$EmpName$"
+EntryType = "Experience"
+included = "0"
+tags = "Entry"
+showonresume= """{{!!normaldescription}}"""
+priority=8
+>
+<$action-navigate $to=<<createTiddler-title>>/>
+</$action-createtiddler>
+\end
+
+\define checkProjectExists(ProjName)
+<$list filter = "[all[current]!field:ProjectName[]!field:Personal[1]]">
+<$list filter="[tag[Entry]field:EntryType[SMAproject]field:title[$ProjName$]]" emptyMessage="<mark>This project ($ProjName$) doesn't exist. Make sure the project is an SMA project that exists in this database (If the project is a personal project, select the checkbox). </mark>" >
+</$list>
+</$list>
+\end
+
+\define checkNameExists(Name)
+<$list filter = "[all[current]!field:Name[]]">
+<$list filter="[[Employees]getindex[$Name$]]" emptyMessage="<mark>This employee ($Name$) doesn't exist. Make sure their name is spelled and capitalized correctly.</mark>" >
+</$list>
+</$list>
+\end
+
+\define checkAlreadyExists(EmpName, ProjName)
+<$list filter="[field:title[$EmpName$ - Experience - $ProjName$]]">
+"""<mark> $EmpName$ already has an experience entry for $ProjName$: [[$EmpName$ - Experience - $ProjName$]].</mark>"""
+</$list>
+\end
+
+\define clear()
+<$action-setfield
+Associations=""
+Description=""
+Keywords=""
+Name=""
+Notes=""
+Personal=0
+ProjectName=""
+Services="" 
+/>
+\end
+
+\define projectSelection()
+<$list filter="[<currentTiddler>field:Personal[0]]" > 
+<$select field="ProjectName">
+<$list filter="[field:EntryType[SMAproject]]-[[Personal]]">
+<option value=<<currentTiddler>>><$view field='title'/></option>
+</$list>
+</$select>
+</$list>
+<$list filter="[<currentTiddler>field:Personal[1]]" >
+<$edit-text field="ProjectName" size=100 />
+</$list>
+\end
+
+\define employeeSelection()
+<$select field="Name">
+<$list filter="[[Employees]indexes[]]">
+<option value=<<currentTiddler>>><$view field='title'/></option>
+</$list>
+</$select>
+\end
+
+<h2> Enter the information for the new Experience </h2>
+
+<$macrocall $name="checkNameExists" Name = {{!!Name}} />
+
+<$macrocall $name="checkProjectExists" ProjName = {{!!ProjectName}} />
+
+<$macrocall $name="checkAlreadyExists" EmpName = {{!!Name}} ProjName = {{!!ProjectName}} />
+
+<$checkbox field="Personal" checked="1" unchecked="0"> Personal Experience </$checkbox>
+
+|table-style|k
+|Employee Name|<<employeeSelection>>|
+|Project Name|<<projectSelection>>|
+|Services|<$edit-text field="Services" class="text-bar"/>|
+|Keywords|<$edit-text field="Associations" class="text-bar"/>|
+
+<$list filter="[<currentTiddler>field:Personal[0]!field:Personal[1]]">
+<h3> Project Description </h3>
+<$transclude tiddler={{!!ProjectName}} field=ResumeDescription/>
+</$list>
+
+<h3>Experience Text:</h3>
+<$edit-text field="Description" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+<h3> General Notes: </h3>
+<$edit-text field="Notes" class = "tw-edit-texteditor myTextEdit" tag="textarea"/>
+
+<$button>
+<$list filter="[all[current]field:Personal[0]!field:Personal[1]]">
+Generate Linked Experience
+<$macrocall $name="GenerateLinked" EmpName = {{!!Name}} ProjName = {{!!ProjectName}} />
+</$list>
+<$list filter="[all[current]!field:Personal[0]field:Personal[1]]">
+Generate Personal Experience
+<$macrocall $name="GeneratePersonal" EmpName = {{!!Name}} ProjName = {{!!ProjectName}} />
+</$list>
+</$button>
+<$button>
+Clear Form
+<<clear>>
+</$button>

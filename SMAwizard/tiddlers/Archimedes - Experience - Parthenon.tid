@@ -1,0 +1,18 @@
+Description: Archimedes did all the math in the construction of the Parthenon.
+EntryType: Experience
+Keywords: 
+Name: Archimedes
+Notes: 
+ProjectName: Parthenon
+ProjectTitleLink: Parthenon
+Services: 
+created: 20220916001942117
+included: 0
+modified: 20220916001942117
+project_text: <$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" />
+showonresume: <$transclude tiddler = {{!!ProjectTitleLink}} field="ResumeDescription" /> {{!!Description}}
+tags: Entry
+title: Archimedes - Experience - Parthenon
+type: text/vnd.tiddlywiki
+
+{{||Experience Entry Template}}

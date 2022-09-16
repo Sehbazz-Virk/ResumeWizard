@@ -12,24 +12,24 @@ LessonsLearned:
 Location: 
 Long Description: 
 LongDescription: 
-OneLinerDescription: 
+OneLinerDescription: The First Olympics occurred in 776 BCE on the island of Pelops, starting a millennia-long tradition of athletic competition.
 OriginalEndDate: 
 OtherNotes: 
 Partner: 
 ProjectBudget: 
 ProjectKeywords: 
-ProjectName: Edmonton Catholic Schools Divine Mercy Elementary School
+ProjectName: The First Olympics
 ProjectServices: 
-ResumeDescription: Divine Mercy Catholic Elementary School is a new school in southeast Edmonton. It was halfway through construction and behind schedule in January 2020 when Edmonton Catholic Schools began to be concerned about meeting their September 1, 2020 opening date. SMA assessed the problem, helped the project get back on track, and monitored progress to provide ECSD with confidence in the end date. The plan began with a site visit and interviews with the project team, followed by a detailed risk analysis and forensic schedule review. SMA worked closely with the contractor to refine the schedule to current standards and introduced key mitigation measures such as materials delivery tracking to the team. Two months into the project, the COVID-19 pandemic began to introduce additional serious challenges to the work. SMA was instrumental in helping the team maintain momentum and work productively together to continue to mitigate risk. Even given the manufacturing disruptions and shipping delays, the school was ultimately successfully completed in September 2020.
+ResumeDescription: The First Olympics were held on Pelops, an island in the Peloponnese region of Greece. Occurring in 776 BCE, the Olympic Games were a tribute to the Olympian Gods. Thousands of years later, the Olympics are still held every four years for the world's greatest athletes to compete on the world's greatest stage.
 Short Description: 
 ShortDescription: 
 StartDate: 
 created: 20220207230054108
-modified: 20220811162402982
+modified: 20220916012003946
 one_liner_description: 
 tags: [[Create New]]
 title: Create New SMAproject
-trophy: 
+trophy: 🏆
 type: text/vnd.tiddlywiki
 
 \define GenerateProject(ProjName)
